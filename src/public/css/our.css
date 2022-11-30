@@ -1,0 +1,82 @@
+body {
+    min-width: calc(250px * 4);
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+footer {
+    border-top: 1px solid #808080;
+    position: fixed;
+    left: 0px; 
+    bottom: 0px; 
+    width: 100%; 
+    text-align: center;
+    background-color: #ffffff;
+}
+
+main {
+    width: calc(250px * 4);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-p {
+    color: #808080;
+    padding-bottom: 24px;
+    padding-top: 24px; 
+}
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    max-width: 250px;
+    width: 200px;
+    margin: 24px;
+    padding: 16px;
+  }
+  
+  /* On mouse-over, add a deeper shadow */
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  /* Add some padding inside the card container */
+  .container {
+    padding: 2px 16px;
+  }
+
+  .description {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: gray;
+  }
+
+  .iceCreamImage {
+    width:100%
+  }
+
+  .inlineSpanStyle {
+    display: inline;
+    width: 100%;
+  }
+
+  .mainHeader {
+    text-align: center;
+  }
+
+  .rating {
+    float: right;
+  }
+
+  .starImage {
+    height: 14px;
+  }
+
+  .wrapperForCards {
+    display: grid;
+    grid-template-columns: 250px 250px 250px 250px;
+    padding-bottom: 100px;
+  }

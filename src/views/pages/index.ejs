@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Ice Cream Shop</title>
+		<link rel="icon" type="image/x-icon" href="/img/mcdonaldsicecream.jpg">
+		<link rel="stylesheet" href="/css/our.css">
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<main>
+			<h1 class="mainHeader">Welcome to Our Ice Cream Shop</h1>
+			<div class="wrapperForCards">
+                <% results.forEach(row => { %>
+                    <div class="card">
+                        <img src="https://s3-web-assets-4abc12e43cc4589c.s3.us-west-1.amazonaws.com/<%= row.ic_id %>.png" class="iceCreamImage">
+                        <div class="container">
+                            <h3><b><%= row.ic_name %></b></h3>
+                            <span class="inlineSpanStyle">
+                                <span><%= row.ic_type %></span>
+                                <span class="rating"><%= row.ic_rating %><img src="/img/star.png" class="starImage"> [<%= row.ic_rating_count %>]</span>
+                            </span>
+                            <p class="description"><%= row.ic_description %></p>
+                        </div>
+                    </div>
+                <% }); %>
+			</div>
+		</main>
+	</body>
+	<footer>
+		<p class="footer-p">&copy 2022 | Our Group for Ice Cream | <a href="tinyurl.com/r7tcw879">About Us</a></p>
+	</footer>
+</html>
