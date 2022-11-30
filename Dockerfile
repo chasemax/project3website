@@ -13,4 +13,4 @@ RUN npm cache clean --force && \
 
 USER node
 
-ENTRYPOINT ["node", "/code/src/index.js"]
+ENTRYPOINT ["node", "/app/index.js"]

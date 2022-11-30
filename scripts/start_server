@@ -1,3 +1,0 @@
-cd /home/ec2-user/web_app
-npm ci
-pm2 start index.js
