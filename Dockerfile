@@ -1,12 +1,16 @@
 FROM alpine:latest
 RUN apk --no-cache add git npm nodejs bash
 
-WORKDIR /code
+WORKDIR /app
 
-COPY src /code
+RUN addgroup -S node && adduser -S node -G node && \
+    mkdir -p /app && chown -R node:node /app
 
-RUN npm install
+COPY src /app/
 
-USER nodeuser
+RUN npm cache clean --force && \
+  npm install
+
+USER node
 
 ENTRYPOINT ["node", "/code/src/index.js"]
