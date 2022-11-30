@@ -13,4 +13,6 @@ RUN npm cache clean --force && \
 
 USER node
 
-ENTRYPOINT ["node", "/app/index.js"]
+EXPOSE 80
+
+CMD node /app/index.js
