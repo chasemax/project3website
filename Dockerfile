@@ -1,5 +1,5 @@
 FROM alpine:latest
-RUN apk --no-cache add git npm nodejs bash
+RUN apk --no-cache add git npm nodejs bash mysql-client mysql
 
 WORKDIR /app
 
