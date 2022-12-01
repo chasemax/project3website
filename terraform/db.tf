@@ -28,7 +28,7 @@ resource "aws_db_instance" "rds_instance" {
 
 # AWS DB Subnet Resource
 resource "aws_db_subnet_group" "rds_subnet_group" {
-    name                    = "main"
+    name                    = "is531-main"
     description             = "Subnet for the DB Instance"
     subnet_ids              = [aws_subnet.public.id, aws_subnet.public2.id]
 
