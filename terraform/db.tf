@@ -10,7 +10,7 @@ resource "aws_db_instance" "rds_instance" {
     instance_class          = var.db_instance_class
     engine                  = "mysql"
     engine_version          = "5.7"
-    identifier              = "rds-IS531-Docker"
+    identifier              = "rds-is531-docker"
     db_name                 = var.db_name
     username                = var.db_username
     password                = var.db_password

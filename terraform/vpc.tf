@@ -6,7 +6,7 @@
 
 # VPC Resource
 resource "aws_vpc" "project1_vpc" {
-  cidr_block                = "10.0.3.0/18"
+  cidr_block                = "10.1.0.0/16"
   enable_dns_hostnames      = true
 
   tags = {
@@ -16,7 +16,7 @@ resource "aws_vpc" "project1_vpc" {
 # Public Subnet Resource
 resource "aws_subnet" "public" {
   vpc_id                    = aws_vpc.project1_vpc.id
-  cidr_block                = "10.0.4.0/24"
+  cidr_block                = "10.1.1.0/24"
   map_public_ip_on_launch   = true
   availability_zone         = data.aws_availability_zones.available.names[1]
 
@@ -33,7 +33,7 @@ data "aws_availability_zones" "available" {
 # Public Subnet Resource
 resource "aws_subnet" "public2" {
   vpc_id                    = aws_vpc.project1_vpc.id
-  cidr_block                = "10.0.5.0/24"
+  cidr_block                = "10.1.2.0/24"
   availability_zone         = data.aws_availability_zones.available.names[0]
   map_public_ip_on_launch   = true
 
@@ -45,7 +45,7 @@ resource "aws_subnet" "public2" {
 # 2nd Private Subnet Resource for DB instance (Aurora requires subnets in 2 AZs)
 resource "aws_subnet" "private" {
   vpc_id                    = aws_vpc.project1_vpc.id
-  cidr_block                = "10.0.2.0/24"
+  cidr_block                = "10.1.3.0/24"
   availability_zone         = data.aws_availability_zones.available.names[1]
 
   tags = {
