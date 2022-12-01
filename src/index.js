@@ -8,10 +8,10 @@ app.set('view engine', 'ejs');
 const knex = require('knex')({
     client: 'mysql',
     connection: {
-        host: 'rds-terraform.c6qwovhemjl6.us-west-1.rds.amazonaws.com',
+        host: 'rds-is531-docker.ccme3kf5lctp.us-east-2.rds.amazonaws.com/',
         port: 3306,
-        user: 'root',
-        password: 'thisisapassword',
+        user: 'is531admin',
+        password: 'is531project3docker',
         database: 'icecreamdb'
     }
 });
