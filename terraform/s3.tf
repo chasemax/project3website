@@ -20,11 +20,11 @@ resource "aws_s3_bucket" "web_assets" {
 
 # Put object in bucket. Not being used currrently but will use for objects later if needed
 resource "aws_s3_bucket_object" "object1" {
-  for_each = fileset("images/", "*")
+  for_each = fileset("../images/", "*")
   bucket = aws_s3_bucket.web_assets.id
   key = each.value
-  source = "images/${each.value}"
-  etag = filemd5("images/${each.value}")
+  source = "../images/${each.value}"
+  etag = filemd5("../images/${each.value}")
   content_type = "image/png"
 }
 
