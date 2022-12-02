@@ -20,14 +20,18 @@ resource "aws_s3_bucket" "web_assets" {
 
 # Put object in bucket. Not being used currrently but will use for objects later if needed
 resource "aws_s3_bucket_object" "object1" {
-  for_each = fileset("../images/", "*")
-  bucket = aws_s3_bucket.web_assets.id
-  key = each.value
-  source = "../images/${each.value}"
-  etag = filemd5("../images/${each.value}")
-  content_type = "image/png"
+  for_each      = fileset("../images/", "*")
+  bucket        = aws_s3_bucket.web_assets.id
+  key           = each.value
+  source        = "../images/${each.value}"
+  etag          = filemd5("../images/${each.value}")
+  content_type  = "image/png"
 }
 
+resource "aws_s3_bucket_acl" "s3_acl1" {
+  bucket  = aws_s3_bucket.web_assets.id
+  acl     = "public-read"
+}
 
 # # S3 Bucket and ACL for the CodePipeline Artifacts
 # resource "aws_s3_bucket" "codepipeline_bucket" {
