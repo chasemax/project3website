@@ -15,7 +15,7 @@ RUN npm cache clean --force && \
 
 USER node
 
-EXPOSE 80
+EXPOSE 8080
 
 # Command on container startup to start node server and listen on Port 80
 CMD node /app/index.js
