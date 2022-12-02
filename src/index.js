@@ -27,5 +27,5 @@ app.get('/', function(req, res) {
         });
 });
 
-app.listen(80);
-console.log("Server on port 80");
+app.listen(8080);
+console.log("Server on port 8080");
